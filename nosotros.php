@@ -10,7 +10,7 @@
 <div class="navbar-collapse collapse">
           <div class="menu">
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation"><a href="index.html" class="active">Inicio</a></li>
+              <li role="presentation"><a href="index.php" class="active">Inicio</a></li>
               <li role="presentation"><a href="about.html">Establecimientos</a></li>
               <li role="presentation"><a href="services.html">Equipo</a></li>
               <li role="presentation"><a href="nosotros.php">Nosotros</a></li>
