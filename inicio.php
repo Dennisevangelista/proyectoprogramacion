@@ -2,6 +2,22 @@
   $page_title = 'Nosotros';
   echo '<link rel="stylesheet" type="text/css" href="libs/css/Index.css" />';
   require_once('includes/load.php');
+
+if (isset($_POST['submit']))
+        {
+            $Nombre   = $_POST['Nombre'];
+            $Correo  = $_POST['Correo'];
+            $Telefono = $_POST['Telefono'];
+            $Mensaje    = $_POST['Mensaje'];
+
+                
+            $transaccion = insert("Contacto",$Nombre,$Correo,$Telefono,$Mensaje);
+            echo "<script>
+            
+                        alert('Insertado Correctamente');
+            </script>";
+
+        }
 ?>
 <?php include_once('layouts/header.php'); ?>
 <meta charset="UTF-8">
@@ -195,20 +211,22 @@
         <div class="flex-child">
 
             <div style="width:90%;">
+            <form  id="myForm"  target="_blank" form action="" method = "POST">
                 <h2> <span>CONTACTO </span>
 
                     <p style="text-align: left !important;">La Panadera es la más creativa, con un equipo que nunca duerme. Dinos algo para que nosotros te respondamos.</p>
          
-                    <input type="text" class="form-control" placeholder="Tu nombre(*)" >
-                    <input type="text" class="form-control" placeholder="Tu correo electrònico(*)" >
-                    <input type="text" class="form-control" placeholder="Tu telèfono(*)" >
-                    <input type="text" class="form-control" placeholder="Tu mensaje(*)" >
+                    <input type="text" name="Nombre" class="form-control" placeholder="Tu nombre(*)" >
+                    <input type="text" name="Correo" class="form-control" placeholder="Tu correo electrònico(*)" >
+                    <input type="text" name="Telefono" class="form-control" placeholder="Tu telèfono(*)" >
+                    <input type="text" name="Mensaje" class="form-control" placeholder="Tu mensaje(*)" >
                     
+               
                              <br>
                    <span style="display: flex;text-align: left;width: 100%;"
                      ><input type="checkbox" class="" id="">He leído y acepto la Política de Privacidad de La Panadera (*)</span>
-                    <input type="submit" style="margin-top: 10px;" class="btn" id="">
-         
+                    <input type="submit" name="submit" style="margin-top: 10px;" class="btn" id="">
+                    </form>
             </div>
         </div>
         <div class="flex-child">

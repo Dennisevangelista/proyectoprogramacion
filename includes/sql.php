@@ -350,5 +350,19 @@ function  monthlySales($year){
   $sql .= " ORDER BY date_format(s.date, '%c' ) ASC";
   return find_by_sql($sql);
 }
+function insert($table,$Nombre,$Correo,$Telefono,$Mensaje)
+{
+  global $db;
+  if(tableExists($table))
+   {
+
+
+    $sql = "INSERT INTO  ".$db->escape($table);
+    $sql .= "(Nombre, Correo, Telefono, Mensaje, Codigo) VALUES ('$Nombre', '$Correo','$Telefono', '$Mensaje', NULL)";
+    $db->query($sql);
+
+    return ($db->affected_rows() === 1) ? true : false;
+   }
+}
 
 ?>
